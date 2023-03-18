@@ -10,8 +10,13 @@ import 'get_movie_usecase_test.mocks.dart';
 
 @GenerateMocks([GetMovieRepository])
 void main() {
-  final movieRepositoryMock = MockGetMovieRepository();
-  GetMovieUseCase useCase = GetMovieUseCaseImpl(movieRepositoryMock);
+  late GetMovieRepository movieRepositoryMock;
+  late GetMovieUseCase useCase;
+
+  setUp(() {
+    movieRepositoryMock = MockGetMovieRepository();
+    useCase = GetMovieUseCaseImpl(movieRepositoryMock);
+  });
 
   test('Should return an instance of the MovieDetailsEntity', () async {
     when(useCase('123')).thenAnswer((_) async => MovieDetailsEntity(id: 1));

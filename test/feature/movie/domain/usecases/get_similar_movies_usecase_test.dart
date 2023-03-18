@@ -10,9 +10,13 @@ import 'get_similar_movies_usecase_test.mocks.dart';
 
 @GenerateMocks([GetSimiliarMoviesRepository])
 void main() {
-  final similarMoviesRepositoryMock = MockGetSimiliarMoviesRepository();
-  GetSimilarMoviesUseCase useCase =
-      GetSimilarMoviesUseCaseImpl(similarMoviesRepositoryMock);
+  late GetSimiliarMoviesRepository similiarMoviesRepository;
+  late GetSimilarMoviesUseCase useCase;
+
+  setUp(() {
+    similiarMoviesRepository = MockGetSimiliarMoviesRepository();
+    useCase = GetSimilarMoviesUseCaseImpl(similiarMoviesRepository);
+  });
 
   test('Should return a List of Movie Details Entity', () async {
     List<MovieDetailsEntity> expectedList = [];

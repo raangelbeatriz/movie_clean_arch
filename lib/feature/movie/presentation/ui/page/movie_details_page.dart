@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movie_clean_arch/core/extensions/size_extension.dart';
 import 'package:movie_clean_arch/feature/movie/presentation/controllers/movie_details_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -18,8 +17,8 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<MovieDetailsController>().getMovie('934433');
-      context.read<MovieDetailsController>().getSimilarMovies('934433');
+      context.read<MovieDetailsController>().getMovie('76600');
+      context.read<MovieDetailsController>().getSimilarMovies('76600');
     });
   }
 
