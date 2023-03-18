@@ -16,9 +16,9 @@ class GetSimilarMoviesRepositoryImpl implements GetSimiliarMoviesRepository {
     try {
       List<MovieDetailsEntity> list = [];
       final result =
-          await _dioHttpImpl.get('/movie/$id?api_key=${Keys.apiKey}');
-      log('The result é $result');
-      for (var element in result.data) {
+          await _dioHttpImpl.get('/movie/$id/similar?api_key=${Keys.apiKey}');
+      log('The result is $result');
+      for (var element in result.data['results']) {
         list.add(MovieDetailsDto.fromJson(element));
       }
       return list;
