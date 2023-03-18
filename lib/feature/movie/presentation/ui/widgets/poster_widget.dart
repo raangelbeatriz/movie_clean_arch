@@ -29,6 +29,7 @@ class _PosterWidgetState extends State<PosterWidget> {
         children: [
           Container(
             decoration: BoxDecoration(
+              color: Colors.black,
               image: widget.posterPath != null
                   ? DecorationImage(
                       image: NetworkImage(

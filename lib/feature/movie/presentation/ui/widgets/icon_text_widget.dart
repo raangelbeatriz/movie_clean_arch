@@ -18,7 +18,7 @@ class IconTextWidget extends StatelessWidget {
           color: Colors.grey,
         ),
         const SizedBox(
-          width: 3,
+          width: 5,
         ),
         Text(
           title,

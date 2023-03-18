@@ -48,14 +48,17 @@ class SimilarMoviesWidget extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: const TextStyle(color: Colors.white),
+                          style: const TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w500),
                         ),
                         const SizedBox(
                           height: 7,
                         ),
                         Text(
                           subtitle,
-                          style: TextStyle(color: Colors.grey[400]!),
+                          style: TextStyle(
+                            color: Colors.grey[400]!,
+                          ),
                         )
                       ],
                     ),
@@ -72,8 +75,8 @@ class SimilarMoviesWidget extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Divider(
-            color: Colors.grey,
+          Divider(
+            color: Colors.grey[800]!,
           )
         ],
       ),
