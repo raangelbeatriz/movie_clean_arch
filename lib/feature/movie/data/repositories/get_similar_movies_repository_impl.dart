@@ -8,9 +8,9 @@ import '../../../../core/exceptions/movie_exception.dart';
 import '../../../../core/utils/keys.dart';
 import '../dto/movie_dto.dart';
 
-class GetSimilarMoviesImpl implements GetSimiliarMoviesRepository {
+class GetSimilarMoviesRepositoryImpl implements GetSimiliarMoviesRepository {
   DioHttpImpl _dioHttpImpl;
-  GetSimilarMoviesImpl(this._dioHttpImpl);
+  GetSimilarMoviesRepositoryImpl(this._dioHttpImpl);
   @override
   Future<List<MovieDetailsEntity>> call(String id) async {
     try {
