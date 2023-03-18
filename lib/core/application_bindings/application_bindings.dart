@@ -3,6 +3,7 @@ import 'package:movie_clean_arch/feature/movie/data/repositories/get_similar_mov
 import 'package:movie_clean_arch/feature/movie/domain/repositories/get_similiar_movies_repository.dart';
 import 'package:movie_clean_arch/feature/movie/domain/usecases/get_similar_movies_usecase.dart';
 import 'package:movie_clean_arch/feature/movie/domain/usecases/get_similar_movies_usecase_impl.dart';
+import 'package:movie_clean_arch/feature/movie/presentation/controllers/movie_details_controller.dart';
 import 'package:provider/provider.dart';
 
 import '../../feature/movie/data/repositories/get_movie_repository_impl.dart';
@@ -41,6 +42,10 @@ class ApplicationBindings extends StatelessWidget {
           create: (context) => GetSimilarMoviesUseCaseImpl(
             context.read(),
           ),
+        ),
+        ChangeNotifierProvider(
+          create: (context) =>
+              MovieDetailsController(context.read(), context.read()),
         ),
       ],
       child: child,
