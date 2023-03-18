@@ -3,8 +3,8 @@ import 'package:movie_clean_arch/core/extensions/size_extension.dart';
 
 import 'icon_text_widget.dart';
 
-class PosterWidget extends StatelessWidget {
-  const PosterWidget({
+class PosterWidget extends StatefulWidget {
+  PosterWidget({
     super.key,
     required this.posterPath,
     required this.likes,
@@ -15,6 +15,12 @@ class PosterWidget extends StatelessWidget {
   final String? posterPath;
   final String likes;
   final String popularity;
+  bool isLiked = false;
+  @override
+  State<PosterWidget> createState() => _PosterWidgetState();
+}
+
+class _PosterWidgetState extends State<PosterWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -23,10 +29,10 @@ class PosterWidget extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              image: posterPath != null
+              image: widget.posterPath != null
                   ? DecorationImage(
                       image: NetworkImage(
-                          'https://image.tmdb.org/t/p/original$posterPath'),
+                          'https://image.tmdb.org/t/p/original${widget.posterPath}'),
                       fit: BoxFit.cover)
                   : null,
             ),
@@ -55,7 +61,7 @@ class PosterWidget extends StatelessWidget {
                       SizedBox(
                         width: context.percentWidth(0.7),
                         child: Text(
-                          movieTitle,
+                          widget.movieTitle,
                           maxLines: 2,
                           textAlign: TextAlign.start,
                           style: const TextStyle(
@@ -64,7 +70,15 @@ class PosterWidget extends StatelessWidget {
                               fontWeight: FontWeight.bold),
                         ),
                       ),
-                      const Icon(Icons.favorite)
+                      InkWell(
+                          onTap: () {
+                            setState(() {
+                              widget.isLiked = !widget.isLiked;
+                            });
+                          },
+                          child: Icon(widget.isLiked
+                              ? Icons.favorite
+                              : Icons.favorite_outline))
                     ],
                   ),
                   const SizedBox(
@@ -73,14 +87,14 @@ class PosterWidget extends StatelessWidget {
                   Row(
                     children: [
                       IconTextWidget(
-                        title: '$likes likes',
+                        title: '${widget.likes} likes',
                         icon: Icons.favorite,
                       ),
                       const SizedBox(
                         width: 30,
                       ),
                       IconTextWidget(
-                        title: '$popularity views',
+                        title: '${widget.popularity} views',
                         icon: Icons.lens,
                       ),
                     ],
