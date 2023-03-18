@@ -62,7 +62,9 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                         poster:
                             movieController.similarMovies[index].backdropPath,
                         title: movieController.similarMovies[index].title ?? '',
-                        subtitle: 'teste'),
+                        subtitle:
+                            movieController.similarMovies[index].releaseDate ??
+                                ''),
                   ),
                 )
               ],
