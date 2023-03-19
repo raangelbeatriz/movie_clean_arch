@@ -20,8 +20,8 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       _movieDetailsController = context.read<MovieDetailsController>();
-      _movieDetailsController.getMovie('76600');
-      _movieDetailsController.getSimilarMovies('76600');
+      _movieDetailsController.getMovie('545611');
+      _movieDetailsController.getSimilarMovies('545611');
       _movieDetailsController.addListener(() {
         if (_movieDetailsController.errorMessage != null) {
           Messages.of(context).showError(_movieDetailsController.errorMessage!);
