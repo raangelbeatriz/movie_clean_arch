@@ -39,7 +39,6 @@ class SimilarMoviesWidget extends StatelessWidget {
                   width: 25,
                 ),
                 Expanded(
-                  flex: 5,
                   child: SizedBox(
                     height: context.percentHeigth(0.11),
                     child: Column(
@@ -64,7 +63,6 @@ class SimilarMoviesWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Spacer(),
                 const Icon(
                   Icons.check_circle,
                   size: 15,
