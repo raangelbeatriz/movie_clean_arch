@@ -23,8 +23,8 @@ class GetSimilarMoviesRepositoryImpl implements GetSimiliarMoviesRepository {
       }
       return list;
     } on Exception catch (e, s) {
-      log('Error while getting movie', error: e, stackTrace: s);
-      throw MovieException(message: 'Error while getting movie');
+      log('Error while getting similar movies', error: e, stackTrace: s);
+      throw MovieException(message: 'Error while getting similar movies');
     }
   }
 }
