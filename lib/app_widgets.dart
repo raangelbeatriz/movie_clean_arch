@@ -1,3 +1,4 @@
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_clean_arch/core/ui/theme_config.dart';
 import 'package:movie_clean_arch/feature/movie/presentation/ui/page/movie_details_page.dart';
@@ -17,6 +18,7 @@ class AppWidgets extends StatelessWidget {
         title: 'Movie App',
         initialRoute: Routes.movieDetails,
         routes: {Routes.movieDetails: (context) => const MovieDetailsPage()},
+        builder: Asuka.builder,
       ),
     );
   }

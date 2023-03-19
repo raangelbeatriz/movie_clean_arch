@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_clean_arch/core/ui/helpers/messages.dart';
 import 'package:movie_clean_arch/feature/movie/presentation/controllers/movie_details_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -13,13 +14,26 @@ class MovieDetailsPage extends StatefulWidget {
 }
 
 class _MovieDetailsPageState extends State<MovieDetailsPage> {
+  late MovieDetailsController _movieDetailsController;
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      context.read<MovieDetailsController>().getMovie('76600');
-      context.read<MovieDetailsController>().getSimilarMovies('76600');
+      _movieDetailsController = context.read<MovieDetailsController>();
+      _movieDetailsController.getMovie('76600');
+      _movieDetailsController.getSimilarMovies('76600');
+      _movieDetailsController.addListener(() {
+        if (_movieDetailsController.errorMessage != null) {
+          Messages.of(context).showError(_movieDetailsController.errorMessage!);
+        }
+      });
     });
+  }
+
+  @override
+  void dispose() {
+    _movieDetailsController.removeListener(() {});
+    super.dispose();
   }
 
   @override

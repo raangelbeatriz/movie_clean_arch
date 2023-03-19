@@ -13,17 +13,20 @@ class MovieDetailsController extends ChangeNotifier {
   MovieDetailsController(this._getMovieUseCase, this._getSimilarMoviesUseCase);
   bool loadingMovie = false;
   bool loadigSimilarMovies = false;
+  String? errorMessage;
 
   MovieDetailsEntity? movie;
   List<MovieDetailsEntity> similarMovies = [];
 
   Future<void> getMovie(String id) async {
     try {
+      errorMessage = null;
       loadingMovie = true;
       notifyListeners();
       movie = await _getMovieUseCase(id);
       log(movie.toString());
     } on MovieException catch (e, s) {
+      errorMessage = e.message;
       log(e.message, stackTrace: s);
     } finally {
       loadingMovie = false;
@@ -33,11 +36,13 @@ class MovieDetailsController extends ChangeNotifier {
 
   Future<void> getSimilarMovies(String id) async {
     try {
+      errorMessage = null;
       loadigSimilarMovies = true;
       notifyListeners();
       similarMovies = await _getSimilarMoviesUseCase(id);
     } on MovieException catch (e, s) {
       log(e.message, stackTrace: s);
+      errorMessage = e.message;
     } finally {
       loadingMovie = false;
       notifyListeners();
