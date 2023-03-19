@@ -4,7 +4,7 @@ import 'package:movie_clean_arch/feature/movie/presentation/controllers/movie_de
 import 'package:provider/provider.dart';
 
 import '../widgets/poster_widget.dart';
-import '../widgets/similar_movies_widget.dart';
+import '../widgets/similar_movie_widget.dart';
 
 class MovieDetailsPage extends StatefulWidget {
   const MovieDetailsPage({Key? key}) : super(key: key);
@@ -71,7 +71,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     childCount: movieController.similarMovies.length,
-                    (context, index) => SimilarMoviesWidget(
+                    (context, index) => SimilarMovieWidget(
                         poster:
                             movieController.similarMovies[index].backdropPath,
                         title: movieController.similarMovies[index].title ?? '',

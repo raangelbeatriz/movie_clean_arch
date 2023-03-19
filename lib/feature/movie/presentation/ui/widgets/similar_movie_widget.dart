@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_clean_arch/core/extensions/size_extension.dart';
 
-class SimilarMoviesWidget extends StatelessWidget {
-  const SimilarMoviesWidget({
+class SimilarMovieWidget extends StatelessWidget {
+  const SimilarMovieWidget({
     super.key,
     this.poster,
     required this.title,
@@ -47,6 +47,8 @@ class SimilarMoviesWidget extends StatelessWidget {
                       children: [
                         Text(
                           title,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w500),
                         ),
@@ -55,6 +57,8 @@ class SimilarMoviesWidget extends StatelessWidget {
                         ),
                         Text(
                           subtitle,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: Colors.grey[400]!,
                           ),
