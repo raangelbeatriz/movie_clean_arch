@@ -15,12 +15,12 @@ class PosterWidget extends StatefulWidget {
   final String? posterPath;
   final String likes;
   final String popularity;
-  bool isLiked = false;
   @override
   State<PosterWidget> createState() => _PosterWidgetState();
 }
 
 class _PosterWidgetState extends State<PosterWidget> {
+  bool isLiked = false;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -74,10 +74,10 @@ class _PosterWidgetState extends State<PosterWidget> {
                       InkWell(
                           onTap: () {
                             setState(() {
-                              widget.isLiked = !widget.isLiked;
+                              isLiked = !isLiked;
                             });
                           },
-                          child: Icon(widget.isLiked
+                          child: Icon(isLiked
                               ? Icons.favorite
                               : Icons.favorite_outline))
                     ],
