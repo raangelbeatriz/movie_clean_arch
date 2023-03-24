@@ -1,7 +1,7 @@
 # Movie Clean Architecture
 ## ✨ Sobre
 
-Movie Clean Architecture é um projeto cujo objetivo era implementar uma telha com informações de filmes utilizando a Arquitetura Limpa. Para isso utilizei a api do The Movie DB e me basei no design do aplicativo TodoMovies. Precisei realizar algumas pequenas modificações no layout pois não encontrei ícones completamente iguais aos propostos no modelo. 
+Movie Clean Architecture é um projeto cujo objetivo era implementar uma tela com informações de filmes utilizando a Arquitetura Limpa. Para isso utilizei a api do The Movie DB e me basei no design do aplicativo TodoMovies. Precisei realizar algumas pequenas modificações no layout pois não encontrei ícones completamente iguais aos propostos no modelo. 
 
 ## ⚡ Demo
 ![Screen_Recording_20230319_140052_AdobeExpress](https://user-images.githubusercontent.com/50742224/226197692-6cfb32df-8cc3-4fa0-9533-8c84ba2eef33.gif)
