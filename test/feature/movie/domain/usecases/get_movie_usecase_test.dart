@@ -19,7 +19,14 @@ void main() {
   });
 
   test('Should return an instance of the MovieDetailsEntity', () async {
-    when(useCase('123')).thenAnswer((_) async => MovieDetailsEntity(id: 1));
+    when(useCase('123')).thenAnswer((_) async => MovieDetailsEntity(
+        backdropPath: "/ae4xZiU7IeFVrvXxm2GjdcTrBm.jpg",
+        id: 934433,
+        releaseDate: "2023-03-08",
+        popularity: 2.0,
+        posterPath: '/ae4xZiU7IeFVrvXxm2GjdcTrBm.jpg',
+        title: 'Everything Everywhere all at once',
+        voteCount: 9));
     final result = await useCase('123');
     expect(result, isInstanceOf<MovieDetailsEntity>());
   });

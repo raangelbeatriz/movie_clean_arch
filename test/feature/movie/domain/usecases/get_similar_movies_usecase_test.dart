@@ -27,8 +27,22 @@ void main() {
 
   test('Should return a Populated List of Movie Details Entity', () async {
     List<MovieDetailsEntity> expectedList = [
-      MovieDetailsEntity(id: 1),
-      MovieDetailsEntity(id: 2)
+      MovieDetailsEntity(
+          backdropPath: '/ae4xZiU7IeFVrvXxm2GjdcTrBm.jpg',
+          id: 934433,
+          releaseDate: "2023-03-08",
+          popularity: 2.0,
+          posterPath: '/ae4xZiU7IeFVrvXxm2GjdcTrBm.jpg',
+          title: 'Everything Everywhere all at once',
+          voteCount: 9),
+      MovieDetailsEntity(
+          backdropPath: '/ae4xZiU7IeFVrvXxm2GjdcTrB.jpg',
+          id: 123,
+          releaseDate: "2023-03-08",
+          popularity: 6.0,
+          posterPath: '/ae4xZiU7IeFVrvXxm2GjdcTrB.jpg',
+          title: 'Everything Everywhere all at once',
+          voteCount: 9)
     ];
     when(useCase("123")).thenAnswer((_) async => expectedList);
     final movie = await useCase("123");
