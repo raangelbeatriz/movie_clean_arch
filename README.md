@@ -1,42 +1,41 @@
 # Movie Clean Architecture
-## ✨ Sobre
 
-Movie Clean Architecture é um projeto cujo objetivo era implementar uma tela com informações de filmes utilizando a Arquitetura Limpa. Para isso utilizei a api do The Movie DB e me basei no design do aplicativo TodoMovies. Precisei realizar algumas pequenas modificações no layout pois não encontrei ícones completamente iguais aos propostos no modelo. 
+## ✨ About
+Movie Clean Architecture is a project whose goal was to implement a screen with movie informations using Clean Architecture. To do this, I used The Movie DB API and based the design on the TodoMovies App. I had to make a few modifications to the layout because I couldn't find icons that match the ones in the inspiration app.
 
 ## ⚡ Demo
 ![Screen_Recording_20230319_140052_AdobeExpress](https://user-images.githubusercontent.com/50742224/226197692-6cfb32df-8cc3-4fa0-9533-8c84ba2eef33.gif)
 
-
-## 📖 O que utilizei
+## 📖 Main Technologies
 - Flutter
-- Provider e Change Notifier para gerenciar estado e fazer injeção de dependência
+- Provider and Change Notifier to manage state and do dependency injection
 - Dio
 - Custom Scroll View
-- Mockito e Build Runner para testes
+- Mockito and Build Runner for testing
 
-## ✏️ Testes 
-Para realização dos testes utilizei o Mockito e o Build Runner e desenvolvi testes em cima da camada de domínio testando a Entity e os use cases.
+## ✏️ Tests
+For testing, I used Mockito and Build Runner and developed tests on the domain layer, testing the Entity and use cases.
 
-## 🚀 Como usar
-
-- Clone esse projeto
+## 🚀 How to use
+- Clone this project
 ```sh
 git clone https://github.com/raangelbeatriz/movie_clean_arch
 ```
-- Abra o projeto e de um nos packages
+- Open the project and run
 ```sh
 flutter pub get
 ```
-- Gere um chave na API do The Movies DB
-- Vá até o arquivo de Keys, no caminho lib -> core -> utils -> keys.dart e cole a chave na variável apiKey
-- Rode o projeto com o comando
+- Generate an API key from The Movie DB API
+- Go to the Keys file, in the path lib -> core -> utils -> keys.dart, and paste the key into the apiKey variable
+- Run the project with the command
+- Open the project and run
 ```sh
 flutter run
 ```
 
-## Aplicativo Similar
+## Similar App
+I developed the MovieFlix app, which also uses The Movie DB API, and some time ago, I decided to refactor the project taking into account topics that I learned in the last few months. The project doesn't use Clean Architecture, but I developed a robust app that features a home screen, detail tiles, and a search feature that uses debounce. To check it out, click [HERE.](https://github.com/raangelbeatriz/movieflix)
 
-Desenvolvi o aplicativo MovieFlix, que também faz uso da API do The Movie DB e a algum tempo atrás resolvi refatorar o projeto levando em consideração tópicos que aprendi nesses últimos meses. O projeto não utiliza a Clean Arch mas nele desenvolvi um aplicativo um pouco mais robusto que conta com a tela inicial, telha de detalhes e busca, que utiliza do debounce. Para checar clique [AQUI.](https://github.com/raangelbeatriz/movieflix)
    
    >This project was developed ❤️ by **[@Beatriz Rangel](https://www.linkedin.com/in/beatrizorangel/)**
    ---
