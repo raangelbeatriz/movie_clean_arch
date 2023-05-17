@@ -20,9 +20,10 @@ void main() {
 
   test('Should return a List of Movie Details Entity', () async {
     List<MovieDetailsEntity> expectedList = [];
-    when(useCase("123")).thenAnswer((_) async => expectedList);
+    when(similiarMoviesRepository("123")).thenAnswer((_) async => expectedList);
     final movie = await useCase("123");
     expect(movie, isInstanceOf<List<MovieDetailsEntity>>());
+    expect(movie, []);
   });
 
   test('Should return a Populated List of Movie Details Entity', () async {
@@ -44,14 +45,14 @@ void main() {
           title: 'Everything Everywhere all at once',
           voteCount: 9)
     ];
-    when(useCase("123")).thenAnswer((_) async => expectedList);
+    when(similiarMoviesRepository("123")).thenAnswer((_) async => expectedList);
     final movie = await useCase("123");
     expect(movie, expectedList);
   });
 
   test('Should throw a Exception', () async {
     List<MovieDetailsEntity> expectedList = [];
-    when(useCase('123')).thenAnswer((_) async {
+    when(similiarMoviesRepository("123")).thenAnswer((_) async {
       throw Exception('Error while getting similar movies');
     });
     final movie = useCase('123');

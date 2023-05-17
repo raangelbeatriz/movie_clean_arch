@@ -56,7 +56,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                     children: [
                       PosterWidget(
                         movieTitle: movieController.movie?.title ?? '',
-                        posterPath: movieController.movie?.backdropPath,
+                        posterPath: movieController.movie?.backdropPath ?? '',
                         likes:
                             movieController.movie?.voteCount.toString() ?? '0',
                         popularity:
@@ -74,17 +74,19 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                     (context, index) => SimilarMovieWidget(
                         poster:
                             movieController.similarMovies[index].backdropPath,
-                        title: movieController.similarMovies[index].title ?? '',
+                        title: movieController.similarMovies[index].title,
                         subtitle:
-                            movieController.similarMovies[index].releaseDate ??
-                                ''),
+                            movieController.similarMovies[index].releaseDate),
                   ),
                 )
               ],
             );
           } else {
             return const Center(
-              child: Text('ERROR'),
+              child: Text(
+                'ERROR',
+                style: TextStyle(color: Colors.white),
+              ),
             );
           }
         }

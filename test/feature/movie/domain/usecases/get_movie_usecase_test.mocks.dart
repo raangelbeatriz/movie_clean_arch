@@ -33,6 +33,108 @@ class _FakeMovieDetailsEntity_0 extends _i1.SmartFake
         );
 }
 
+/// A class which mocks [MovieDetailsEntity].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieDetailsEntity extends _i1.Mock
+    implements _i2.MovieDetailsEntity {
+  MockMovieDetailsEntity() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  String get backdropPath => (super.noSuchMethod(
+        Invocation.getter(#backdropPath),
+        returnValue: '',
+      ) as String);
+  @override
+  set backdropPath(String? _backdropPath) => super.noSuchMethod(
+        Invocation.setter(
+          #backdropPath,
+          _backdropPath,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  int get id => (super.noSuchMethod(
+        Invocation.getter(#id),
+        returnValue: 0,
+      ) as int);
+  @override
+  set id(int? _id) => super.noSuchMethod(
+        Invocation.setter(
+          #id,
+          _id,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  double get popularity => (super.noSuchMethod(
+        Invocation.getter(#popularity),
+        returnValue: 0.0,
+      ) as double);
+  @override
+  set popularity(double? _popularity) => super.noSuchMethod(
+        Invocation.setter(
+          #popularity,
+          _popularity,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  String get posterPath => (super.noSuchMethod(
+        Invocation.getter(#posterPath),
+        returnValue: '',
+      ) as String);
+  @override
+  set posterPath(String? _posterPath) => super.noSuchMethod(
+        Invocation.setter(
+          #posterPath,
+          _posterPath,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  String get releaseDate => (super.noSuchMethod(
+        Invocation.getter(#releaseDate),
+        returnValue: '',
+      ) as String);
+  @override
+  set releaseDate(String? _releaseDate) => super.noSuchMethod(
+        Invocation.setter(
+          #releaseDate,
+          _releaseDate,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  String get title => (super.noSuchMethod(
+        Invocation.getter(#title),
+        returnValue: '',
+      ) as String);
+  @override
+  set title(String? _title) => super.noSuchMethod(
+        Invocation.setter(
+          #title,
+          _title,
+        ),
+        returnValueForMissingStub: null,
+      );
+  @override
+  int get voteCount => (super.noSuchMethod(
+        Invocation.getter(#voteCount),
+        returnValue: 0,
+      ) as int);
+  @override
+  set voteCount(int? _voteCount) => super.noSuchMethod(
+        Invocation.setter(
+          #voteCount,
+          _voteCount,
+        ),
+        returnValueForMissingStub: null,
+      );
+}
+
 /// A class which mocks [GetMovieRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.

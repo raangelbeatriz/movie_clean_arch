@@ -4,12 +4,12 @@ import 'package:movie_clean_arch/core/extensions/size_extension.dart';
 class SimilarMovieWidget extends StatelessWidget {
   const SimilarMovieWidget({
     super.key,
-    this.poster,
+    required this.poster,
     required this.title,
     required this.subtitle,
   });
 
-  final String? poster;
+  final String poster;
   final String title;
   final String subtitle;
   @override
@@ -27,13 +27,10 @@ class SimilarMovieWidget extends StatelessWidget {
                   height: context.percentHeigth(0.11),
                   width: context.percentWidth(0.15),
                   decoration: BoxDecoration(
-                    image: poster != null
-                        ? DecorationImage(
-                            image: NetworkImage(
-                                'https://image.tmdb.org/t/p/original$poster'),
-                            fit: BoxFit.cover)
-                        : null,
-                  ),
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'https://image.tmdb.org/t/p/original$poster'),
+                          fit: BoxFit.cover)),
                 ),
                 const SizedBox(
                   width: 25,

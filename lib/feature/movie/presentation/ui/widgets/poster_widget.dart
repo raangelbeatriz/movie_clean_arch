@@ -4,7 +4,7 @@ import 'package:movie_clean_arch/core/extensions/size_extension.dart';
 import 'icon_text_widget.dart';
 
 class PosterWidget extends StatefulWidget {
-  PosterWidget({
+  const PosterWidget({
     super.key,
     required this.posterPath,
     required this.likes,
@@ -12,7 +12,7 @@ class PosterWidget extends StatefulWidget {
     required this.movieTitle,
   });
   final String movieTitle;
-  final String? posterPath;
+  final String posterPath;
   final String likes;
   final String popularity;
   @override
@@ -30,12 +30,10 @@ class _PosterWidgetState extends State<PosterWidget> {
           Container(
             decoration: BoxDecoration(
               color: Colors.black,
-              image: widget.posterPath != null
-                  ? DecorationImage(
-                      image: NetworkImage(
-                          'https://image.tmdb.org/t/p/original${widget.posterPath}'),
-                      fit: BoxFit.cover)
-                  : null,
+              image: DecorationImage(
+                  image: NetworkImage(
+                      'https://image.tmdb.org/t/p/original${widget.posterPath}'),
+                  fit: BoxFit.cover),
             ),
           ),
           Container(

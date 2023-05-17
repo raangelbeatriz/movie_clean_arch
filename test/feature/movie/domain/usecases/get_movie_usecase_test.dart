@@ -19,7 +19,7 @@ void main() {
   });
 
   test('Should return an instance of the MovieDetailsEntity', () async {
-    when(useCase('123')).thenAnswer((_) async => MovieDetailsEntity(
+    when(movieRepositoryMock('123')).thenAnswer((_) async => MovieDetailsEntity(
         backdropPath: "/ae4xZiU7IeFVrvXxm2GjdcTrBm.jpg",
         id: 934433,
         releaseDate: "2023-03-08",
@@ -29,10 +29,11 @@ void main() {
         voteCount: 9));
     final result = await useCase('123');
     expect(result, isInstanceOf<MovieDetailsEntity>());
+    expect(result.id, 934433);
   });
 
   test('should throw an exception', () {
-    when(useCase('123')).thenAnswer((_) async {
+    when(movieRepositoryMock('123')).thenAnswer((_) async {
       throw Exception('Error while getting move');
     });
     final movie = useCase('123');
